@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>图片顺序谜题</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <h1>事件线索重组</h1>
+      <p class="desc">点击两张图片交换位置，恢复事件发生顺序以解锁下一章。</p>
+
+      <section id="image-order-container" aria-label="图片顺序谜题"></section>
+
+      <div id="puzzle-status" class="status" role="status" aria-live="polite">
+        请选择两张图片进行交换。
+      </div>
+
+      <div id="story-state" class="story-state">当前章节：第 1 章（线索收集中）</div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
