@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Convergent Journalism Test</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="app-header">
+        <h1>互动叙事实验</h1>
+        <p class="hint-text">按剧情推进依次完成小游戏。</p>
+      </header>
+
+      <section id="story-branch-container" class="module-container" data-module="story-branch">
+        <h2>分支故事线</h2>
+        <p class="hint-text">在这里渲染剧情节点与选项。</p>
+        <button type="button" class="btn">进入剧情</button>
+      </section>
+
+      <section id="lock-game-container" class="module-container is-hidden" data-module="lock-game">
+        <h2>密码锁小游戏</h2>
+        <p class="hint-text">输入正确密码以解锁线索。</p>
+        <button type="button" class="btn">尝试解锁</button>
+      </section>
+
+      <section id="image-order-container" class="module-container is-hidden" data-module="image-order">
+        <h2>图片重组小游戏</h2>
+        <p class="hint-text">调整图片顺序恢复现场全貌。</p>
+        <button type="button" class="btn">开始重组</button>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,89 @@
+:root {
+  --bg: #f6f8fb;
+  --card: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --primary: #2563eb;
+  --success: #15803d;
+  --error: #b91c1c;
+  --border: #dbe2ea;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+.app-shell {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: grid;
+  gap: 0.9rem;
+}
+
+.app-header,
+.module-container {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 1rem;
+}
+
+h1,
+h2 {
+  margin: 0 0 0.5rem;
+}
+
+.hint-text {
+  margin: 0 0 0.85rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.btn {
+  border: none;
+  border-radius: 0.5rem;
+  background: var(--primary);
+  color: #fff;
+  padding: 0.6rem 0.9rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.module-container.is-hidden {
+  display: none;
+}
+
+.is-success {
+  border-color: color-mix(in srgb, var(--success) 40%, white);
+  background: color-mix(in srgb, var(--success) 8%, white);
+  color: var(--success);
+}
+
+.is-error {
+  border-color: color-mix(in srgb, var(--error) 45%, white);
+  background: color-mix(in srgb, var(--error) 8%, white);
+  color: var(--error);
+}
+
+@media (min-width: 768px) {
+  .app-shell {
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+
+  .module-container {
+    padding: 1.25rem;
+  }
+}
