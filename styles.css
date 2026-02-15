@@ -1,0 +1,73 @@
+:root {
+  font-family: "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f4f6fa;
+  color: #1f2a37;
+}
+
+main {
+  max-width: 720px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+
+section {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.08);
+}
+
+#story-controls {
+  margin-top: 16px;
+}
+
+.lock-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+#lock-input {
+  width: 180px;
+  padding: 8px 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+}
+
+#lock-submit,
+#branch-button {
+  border: 0;
+  border-radius: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+  color: #fff;
+  background: #2563eb;
+}
+
+#branch-button:disabled {
+  cursor: not-allowed;
+  background: #94a3b8;
+}
+
+#branch-button.is-unlocked {
+  background: #059669;
+}
+
+#lock-hint {
+  margin-top: 12px;
+  min-height: 24px;
+}
+
+#lock-hint[data-state="success"] {
+  color: #047857;
+}
+
+#lock-hint[data-state="error"],
+#lock-hint[data-state="invalid"] {
+  color: #b91c1c;
+}
