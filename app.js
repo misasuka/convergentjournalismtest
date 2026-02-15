@@ -59,6 +59,15 @@ const storyNodes = {
 const OPENING_NODE_ID = 'start';
 let currentNodeId = OPENING_NODE_ID;
 
+function createChoiceButton(choice) {
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.className = 'story-choice-button';
+  button.textContent = choice.label;
+  button.addEventListener('click', () => onChoiceSelected(choice.nextId));
+  return button;
+}
+
 function renderStoryNode(nodeId) {
   const container = document.getElementById('story-branch-container');
   if (!container) {
@@ -67,7 +76,7 @@ function renderStoryNode(nodeId) {
 
   const node = storyNodes[nodeId] || storyNodes[OPENING_NODE_ID];
   currentNodeId = node.id;
-  container.innerHTML = '';
+  container.replaceChildren();
 
   const storyText = document.createElement('p');
   storyText.className = 'story-text';
@@ -79,12 +88,7 @@ function renderStoryNode(nodeId) {
     choicesWrapper.className = 'story-choices';
 
     node.choices.forEach((choice) => {
-      const button = document.createElement('button');
-      button.type = 'button';
-      button.className = 'story-choice-button';
-      button.textContent = choice.label;
-      button.addEventListener('click', () => onChoiceSelected(choice.nextId));
-      choicesWrapper.appendChild(button);
+      choicesWrapper.appendChild(createChoiceButton(choice));
     });
 
     container.appendChild(choicesWrapper);
@@ -100,7 +104,7 @@ function renderStoryNode(nodeId) {
 }
 
 function onChoiceSelected(nextId) {
-  if (!storyNodes[nextId]) {
+  if (!Object.prototype.hasOwnProperty.call(storyNodes, nextId)) {
     return;
   }
 
@@ -118,7 +122,7 @@ function initStory() {
 }
 
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initStory);
+  document.addEventListener('DOMContentLoaded', initStory, { once: true });
 } else {
   initStory();
 }
